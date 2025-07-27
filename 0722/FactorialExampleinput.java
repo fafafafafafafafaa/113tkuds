@@ -1,4 +1,6 @@
-public class FactorialExample {
+import java.util.Scanner;
+
+public class FactorialExampleinput {
 
     public static int factorialWithSteps(int n) {
         int result = 1;
@@ -22,8 +24,17 @@ public class FactorialExample {
     }
 
     public static void main(String[] args) {
-        factorialWithSteps(3);
-        factorialWithSteps(5);
-        factorialWithSteps(0);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("請輸入一個非負整數：");
+
+        int number = scanner.nextInt();
+
+        if (number < 0) {
+            System.out.println("錯誤：不能輸入負數！");
+        } else {
+            factorialWithSteps(number);
+        }
+
+        scanner.close();
     }
 }
